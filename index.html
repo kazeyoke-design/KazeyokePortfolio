@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <script>
-  if (sessionStorage.getItem("openingPlayed")) {
-    document.documentElement.classList.add("opening-played");
-  } else {
-    sessionStorage.setItem("openingPlayed", "true");
-  }
-</script>
+
 <head>
+  <script>
+    if (sessionStorage.getItem("openingPlayed")) {
+      document.documentElement.classList.add("opening-played");
+    } else {
+      sessionStorage.setItem("openingPlayed", "true");
+    }
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio| 寝凪 Kazeyoke</title>
@@ -30,7 +31,11 @@
     gtag('js', new Date());
 
     gtag('config', 'G-9JPQ5KPZ0X');
+    
   </script>
+
+
+
 </head>
 
 <body>
