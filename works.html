@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Works Gallery | 寝凪 Kazeyoke</title>
+  <!-- CSSファイルの読み込み -->
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/works.css">
+    <!-- JavaScriptファイルの読み込み -->
+  <script src="/js/main.js"></script>
+  <script src="/js/works.js"></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <div id="header"></div>
+
+  <main class="container">
+    <section style="margin-top: 40px; padding-bottom: var(--space-section);">
+      <h2 class="section-title">Works Gallery</h2>
+      
+      <!-- Category Filter Tabs -->
+      <div class="filter-tabs">
+        <button class="filter-btn active" onclick="filterGallery('all', this)">All</button>
+        <button class="filter-btn" onclick="filterGallery('illustration', this)">Illustration</button>
+        <button class="filter-btn" onclick="filterGallery('design', this)">Design</button>
+        <button class="filter-btn" onclick="filterGallery('live2d', this)">Live2D</button>
+      </div>
+
+      <!-- 作品一覧グリッド -->
+      <div class="works-grid" id="gallery-grid"></div>
+    </section>
+
+    <div class="pagination-container" id="pagination"></div>
+</section>
+
+    <!-- トップページに戻るボタン -->
+    <div class="back-to-home">
+      <a href="index.html" class="btn btn-outline">
+        ← トップページに戻る
+      </a>
+    </div>
+
+    <!-- Banner Links Section -->
+    <!--<section class="banner-section" style="margin-bottom: var(--space-section);">
+      <a href="https://skima.jp" target="_blank" rel="noopener" class="banner-card">
+        <span>SKIMA マイページ</span>
+        <span>↗</span>
+      </a>
+      <a href="https://tsunagu.cloud" target="_blank" rel="noopener" class="banner-card">
+        <span>つなぐ マイページ</span>
+        <span>↗</span>
+      </a>
+    </section>-->
+  </main>
+
+  <!-- Lightbox Modal -->
+
+  <div id="modal" class="modal-overlay">
+    <div class="modal-content">
+
+      <!-- 画像・動画の表示エリア -->
+      <div class="modal-image" id="modal-img-placeholder">
+        Artwork Image
+      </div>
+
+      <h3 class="modal-title" id="modal-title">作品タイトル</h3>
+
+      <p class="modal-created-at" id="modal-created-at"></p>
+
+      <p class="modal-desc" id="modal-desc">
+        作品の詳細説明テキストが入ります。
+      </p>
+
+      <button class="btn" onclick="closeModal()">Close</button>
+
+    </div>
+  </div>
+
+
+
+    <!-- 共通フッター -->
+    <div id="footer"></div>
+
+
+</body>
+</html>

@@ -1,125 +1,377 @@
 <!DOCTYPE html>
 <html lang="ja">
+  <script>
+  if (sessionStorage.getItem("openingPlayed")) {
+    document.documentElement.classList.add("opening-played");
+  } else {
+    sessionStorage.setItem("openingPlayed", "true");
+  }
+</script>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kazeyoke | Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio| 寝凪 Kazeyoke</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+    <!-- JavaScriptファイルの読み込み -->
+  <script src="/js/main.js"></script>
+  <script src="/js/works.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+  <!-- ★ Google Material Symbols (Icons) の読み込み -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
-    <link rel="icon" href="images/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon-180x180.png">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9JPQ5KPZ0X"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300;400;500&family=M+PLUS+1:wght@100..900&display=swap" rel="stylesheet">
- 
-    <link rel="stylesheet" href="css/style.css">
+    gtag('config', 'G-9JPQ5KPZ0X');
+  </script>
 </head>
 
 <body>
-
-<main class="container">
-    <section class="card">
-        <div class="hero">
-            <img src="images/header.png" alt="ヘッダー画像">
-        </div>
-
-        <div class="content">
-
-        <h1>寝凪 <span>/ Kazeyoke</span></h1>
-
-        <p class="job">
-            Illustrator ・ Character Designer
-        </p>
-
-            <section class="links-section" id="links">
-                <h2 class="section-title">Links</h2>
-                <p>イラストや素材の販売、ご依頼はこちらから</p>
-                <div class="links">
-                    <a href="https://x.com/nenagi_kazeyoke" target="_blank" rel="noopener noreferrer">X</a>
-
-                    <a href="https://skima.jp/profile?id=476452&sh=sy41KWL" target="_blank" rel="noopener noreferrer">SKIMA</a>
-
-                    <a href="https://tsunagu.cloud/users/nenagi_kazeyoke" target="_blank" rel="noopener noreferrer">つなぐ</a>
-
-                    <a href="https://kazeyoke-sub.booth.pm/" target="_blank" rel="noopener noreferrer">BOOTH</a>
-                </div>
-            </section>
-
-            <section class="profile-section" id="profile">
-                <h2 class="section-title">Profile</h2>
-
-                <div class="profile-card">
-                    <p>
-                    ■ 寝凪（ねなぎ）<br><br>
-
-                        オリジナルキャラクター制作を中心に活動しています。
-                        イラスト・Live2D・キャラクターデザインのお仕事を承っています。<br><br>
-
-                        美術大学デザイン学科卒業。<br>
-                        デザイン部署にて実務経験９年。
-                    </p>
-                </div>
-            </section>
-
-
-
-            <section class="skills">
-                <h2 class="section-title">Skills</h2>
-
-                <div class="skill-grid">
-
-                    <div class="skill-card">
-                    <h3>🎨 Illustration</h3>
-                    <ul>
-                        <li>キャラクターデザイン</li>
-                        <li>立ち絵制作</li>
-                        <li>一枚絵</li>
-                        <li>SDイラスト</li>
-                    </ul>
-                    </div>
-
-                    <div class="skill-card">
-                    <h3>🧸 Live2D</h3>
-                    <ul>
-                        <li>パーツ分け</li>
-                        <li>モデリング</li>
-                        <li>服替え</li>
-                    </ul>
-                    </div>
-
-                    <div class="skill-card">
-                    <h3>💻 Design</h3>
-                    <ul>
-                        <li>Webデザイン</li>
-                        <li>UIデザイン</li>
-                        <li>バナー制作</li>
-                        <li>レイアウト設計</li>
-                    </ul>
-                    </div>
-
-                    <div class="skill-card">
-                    <h3>⚙ Software</h3>
-                    <ul>
-                        <li>CLIP STUDIO PAINT</li>
-                        <li>Photoshop</li>
-                        <li>Illustrator</li>
-                        <li>Live2D Cubism</li>
-                        <li>Figma</li>
-                        <li>VS Code</li>
-                        <li>HTML / CSS </li>
-                    </ul>
-                    </div>
-
+  <!-- Opening Animation -->
+   
+  <div class="opening" id="opening">
+    <div class="opening-logo">
+      <img src="/icons/rogo_cr.svg" alt="Nenagi">
+      <span>Nenagi by Kazeyoke</span>
+    </div>
   </div>
-</section>
+  <!-- Header -->
+  <div id="header"></div>
+  <main class="container">
+    <!-- Hero Section (★ images/index/hero.png を設定) -->
+    <section class="hero">
+      <div class="hero-banner" style="background-image: url('images/index/hero2.png'); background-size: cover; background-position: center;">
+        <div class="hero-copy">
+          <h1>Portfolio</h1>
+          <p>ILLUSTRATION & DESIGN</p>
         </div>
+      </div>
     </section>
-</main>
+
+   
+    <!-- About Section -->
+    <section id="about" class="about-section">
+      <h2 class="section-title">About</h2>
+
+      <div class="about-card">
+
+        <!-- 自己紹介 -->
+        <div class="about-item">
+          <div class="about-heading">
+            <span class="material-symbols-outlined about-icon">person</span>
+            <h3>自己紹介</h3>
+          </div>
+
+          <div class="about-content">
+            <p class="about-name">寝凪（ねなぎ）</p>
+            <p>オリジナルキャラクターのイラスト制作を中心に活動しています。</p>
+            <p>イラスト・キャラクターデザインのお仕事を承っています。</p>
+            <p>美術大学デザイン学科卒業。デザイン系の実務経験9年。</p>
+          </div>
+        </div>
+
+        <!-- 好きなもの -->
+        <div class="about-item">
+          <div class="about-heading">
+            <span class="material-symbols-outlined about-icon">favorite</span>
+            <h3>好きなもの</h3>
+          </div>
+
+          <div class="about-content">
+            <div class="favorite-tags">
+
+              <div class="favorite-tag-wrap">
+                <button
+                  type="button"
+                  class="favorite-tag"
+                  aria-expanded="false"
+                  aria-controls="favorite-trpg"
+                >
+                  <span class="material-symbols-outlined">casino</span>
+                  <span>TRPG</span>
+                </button>
+
+                <div class="favorite-tooltip" id="favorite-trpg" role="tooltip">
+                  CoC / シノビガミ / エモクロア / マギカロギア
+                </div>
+              </div>
+
+              <div class="favorite-tag-wrap">
+                <button
+                  type="button"
+                  class="favorite-tag"
+                  aria-expanded="false"
+                  aria-controls="favorite-game"
+                >
+                  <span class="material-symbols-outlined">sports_esports</span>
+                  <span>ゲーム</span>
+                </button>
+
+                <div class="favorite-tooltip" id="favorite-game" role="tooltip">
+                  ポケモンシリーズ / MOTHERシリーズ /
+                  FEシリーズ / テイルズシリーズ /
+                  ドラクエシリーズ / 学園ハンサム など
+                </div>
+              </div>
+
+              <div class="favorite-tag-wrap">
+                <button
+                  type="button"
+                  class="favorite-tag"
+                  aria-expanded="false"
+                  aria-controls="favorite-anime"
+                >
+                  <span class="material-symbols-outlined">menu_book</span>
+                  <span>漫画・アニメ</span>
+                </button>
+
+                <div class="favorite-tooltip" id="favorite-anime" role="tooltip">
+                  フルーツバスケット / らんま1/2 など
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- スキル・制作可能なもの -->
+        <div class="about-item">
+          <div class="about-heading">
+            <span class="material-symbols-outlined about-icon">palette</span>
+            <h3>スキル<br>制作可能なもの</h3>
+          </div>
+
+          <div class="about-content">
+            <p>
+              イラスト・キャラクターデザイン・Live2D、
+              制作可能なものや対応範囲のまとめなど。
+            </p>
+
+            <a
+              href="https://note.com/nenagi_kazeyoke"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="about-note-link"
+            >
+              noteで詳しく見る
+              <span class="material-symbols-outlined btn-icon">open_in_new</span>
+            </a>
+          
+          <!-- 外部リンク -->
+        <div class="about-buttons">
+          <a
+            href="https://note.com/nenagi_kazeyoke"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn"
+          >
+            note
+            <span class="material-symbols-outlined btn-icon">open_in_new</span>
+          </a>
+
+          <a
+            href="https://note.com/nenagi_kazeyoke/n/n1725eb1ab9d6?sub_rt=share_pw"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn"
+          >
+            SKIMA
+            <span class="material-symbols-outlined btn-icon">open_in_new</span>
+          </a>
+
+          <a
+            href="https://tsunagu.cloud/users/nenagi_kazeyoke"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn"
+          >
+            つなぐ
+            <span class="material-symbols-outlined btn-icon">open_in_new</span>
+          </a>
+
+          <a
+            href="https://kazeyoke-sub.booth.pm/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn"
+          >
+            BOOTH
+            <span class="material-symbols-outlined btn-icon">open_in_new</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- Works Preview Section -->
+    <section class="works-section" id="works">
+      <h2 class="section-title">Works</h2>
+      
+      <!-- Illustration -->
+      <div class="works-group">
+        <div class="group-header">
+          <span class="group-badge">Illustration</span>
+        </div>
+        <div class="works-grid" id="top-illustration-grid"></div>
+        <div class="see-more-wrap">
+          <a href="works.html?category=illustration" class="see-more-link">See more →</a>
+        </div>
+      </div>
+
+      <!-- Design -->
+      <div class="works-group">
+        <div class="group-header">
+          <span class="group-badge">Design</span>
+        </div>
+        <div class="works-grid" id="top-design-grid"></div>
+        <div class="see-more-wrap">
+          <a href="works.html?category=design" class="see-more-link">See more →</a>
+        </div>
+      </div>
+
+      <!-- Live2D -->
+      <div class="works-group">
+        <div class="group-header">
+          <span class="group-badge">Live2D</span>
+        </div>
+
+        <div class="works-grid" id="top-live2d-grid"></div>
+
+        <div class="see-more-wrap">
+          <a href="works.html?category=live2d" class="see-more-link">
+            See more →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+          <h2 class="section-title">ご依頼について</h2>
+            <p class="section-description">
+                ご利用しやすい窓口から、お気軽にご相談ください。<br>
+                仲介サービスごとの手数料によって料金が異なる場合があります。
+                ご予算に合わせたお見積もりのご相談も承っております。
+            </p>
+          <div class="contact-grid">  
+            <!-- カード1：コミッションサイト -->
+            <div class="contact-card">
+              <div>
+                <!-- 丸枠アイコン (手帳/依頼アイコン: description) -->
+                <div class="icon-circle">
+                  <span class="material-symbols-outlined">draw</span>
+                </div>
+                <h3>コミッションサイト経由のご依頼</h3>
+                <p>SKIMAなどの仲介サービスを通じて、安心・安全にご依頼いただけます。<br>
+                  オーダーメイドのイラスト・デザイン制作のほか、完成済みの立ち絵を販売するAdoptも取り扱っています。</p>
+              </div>
+              <div class="card-btns">
+                <a href="https://skima.jp/profile?id=476452&sh=sy41KWL" target="_blank" rel="noopener" class="btn">SKIMA<span class="material-symbols-outlined btn-icon">open_in_new</span>
+                </a>
+                <a href="https://tsunagu.cloud/users/nenagi_kazeyoke" target="_blank" rel="noopener" class="btn">つなぐ <span class="material-symbols-outlined btn-icon">open_in_new</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- カード2：直接のご依頼・ご相談 -->
+            <div class="contact-card">
+              <div>
+                <!-- 丸枠アイコン (メールアイコン: mail) -->
+                <div class="icon-circle">
+                  <span class="material-symbols-outlined">mail</span>
+                </div>
+                <h3>直接のご依頼・ご相談</h3>
+                <p>XのDMから制作のご相談やお見積もり、スケジュールの調整などを承っております。<br>
+                  お支払いには、決済サービス「<a href="https://www.azkari.jp/" target="_blank" rel="noopener" class="text-link">アズカリ</a>」のご利用をお願いしております。<br>
+                  メールでのお問い合わせをご希望の場合は、[お問い合わせ（Googleフォーム）]からもご連絡いただけます。</p>
+              </div>
+              <div class="card-btns">
+                <a href="https://x.com/nenagi_kazeyoke" target="_blank" rel="noopener" class="btn">X(DM)<span class="material-symbols-outlined btn-icon">open_in_new</span>
+                </a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSf8MIjgEtOjp0OiPZRVytYqFNPYC6hWMDwgBQa8tQxp0I2mGg/viewform?usp=dialog" target="_blank" rel="noopener" class="btn">お問い合わせ <span class="material-symbols-outlined btn-icon">open_in_new</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- HTML実装案 (パターン② QA・縦リスト形式) -->
+          <div class="note-qa-list">
+            <!-- QA 1 -->
+             <!-- <div class="note-qa-item">
+              <div class="note-qa-icon">
+                <span class="material-symbols-outlined">help</span>
+              </div>
+              <div class="note-qa-body">
+                <span class="qa-label">Q. 制作料金の目安やオプションについて知りたい</span>
+                <h4>イラスト・デザイン料金表・メニューガイド</h4>
+                <p>立ち絵制作やSDキャラ制作の基準価格・著作権譲渡等のオプション詳細をまとめています。</p>
+              </div>
+              <a href="https://note.com/YOUR_NOTE_ID/n/xxx1" target="_blank" rel="noopener" class="btn btn-outline">
+                詳細を見る <span class="material-symbols-outlined">open_in_new</span>
+              </a>
+            </div>-->
+
+            <!-- QA 2 -->
+            <!--<div class="note-qa-item">
+              <div class="note-qa-icon">
+                <span class="material-symbols-outlined">schedule</span>
+              </div>
+              <div class="note-qa-body">
+                <span class="qa-label">Q. 相談から納品までの期間・流れは？</span>
+                <h4>ご依頼について</h4>
+                <p>ヒアリング〜ラフ提示〜完成までのスケジュール感と修正ルールに関するご案内です。</p>
+              </div>
+              <a href="https://note.com/nenagi_kazeyoke/n/n1725eb1ab9d6?sub_rt=share_pw" target="_blank" rel="noopener" class="btn btn-outline">
+                詳細を見る <span class="material-symbols-outlined">open_in_new</span>
+              </a>
+            </div>-->
+            <!-- QA 3 -->
+            <div class="note-qa-item">
+              <div class="note-qa-icon">
+                <span class="material-symbols-outlined">gavel</span>
+              </div>
+              <div class="note-qa-body">
+                <span class="qa-label">Q. ご依頼・作品利用に関するルールは？</span>
+                <h4>ご依頼前に知っておきたい利用規約・権利について</h4>
+                <p>著作権・二次利用・商用利用など、安心してご依頼・ご利用いただくためのルールをまとめています。</p>
+              </div>
+              <a href="https://note.com/nenagi_kazeyoke/n/nfcec3218aa01" target="_blank" rel="noopener" class="btn btn-outline">
+                詳細を見る <span class="material-symbols-outlined">open_in_new</span>
+              </a>
+            </div>
+          </div>
+        </section>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Lightbox Modal -->
+  <div id="modal" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-image" id="modal-img-placeholder">Artwork Image</div>
+      <h3 class="modal-title" id="modal-title">作品タイトル</h3>
+      <p class="modal-desc" id="modal-desc">作品の詳細説明テキストが入ります。</p>
+      <button class="btn" onclick="closeModal()">Close</button>
+    </div>
+  </div>
+        <!-- ページの一番上に戻るボタン -->
+    <div style="text-align: center; margin-bottom: var(--space-section);">
+      <button onclick="scrollToTop()" class="btn btn-outline">
+        TOP ↑
+      </button>
+    </div>
+    <!-- 共通フッター -->
+    <div id="footer"></div>
 
 </body>
-
-<footer>
-    <p>© 2025 寝凪 / Kazeyoke. All Rights Reserved.</p>
-</footer>
 </html>

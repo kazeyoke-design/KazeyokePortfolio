@@ -1,0 +1,187 @@
+
+/* ========================================
+   Legal page
+   特定商取引法・プライバシーポリシー・ご依頼規約 共通
+======================================== */
+
+.legal-page {
+  padding-top: 48px;
+  padding-bottom: var(--space-section, 80px);
+}
+
+.legal-hero {
+  margin-bottom: 40px;
+}
+
+.legal-hero .section-title {
+  margin-bottom: 16px;
+}
+
+.legal-intro {
+  color: var(--color-text, #253B4D);
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.legal-content {
+  margin: 0 auto;
+}
+
+/* 項目一覧 */
+.legal-list {
+  margin: 0;
+  border-top: 1px solid #DCE5E6;
+  padding: 0;
+  list-style: none;
+}
+
+/* 各項目 */
+.legal-item {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.32fr) 1fr;
+  gap: 24px;
+  padding: 24px 16px;
+  border-bottom: 1px solid #DCE5E6;
+}
+
+.legal-item dt {
+  margin: 0;
+  color: var(--color-text, #253B4D);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.8;
+}
+
+.legal-item dd {
+  margin: 0;
+  color: var(--color-text, #253B4D);
+  font-size: 14px;
+  line-height: 2;
+  overflow-wrap: anywhere;
+}
+
+.legal-item dd p {
+  margin: 0 0 12px;
+}
+
+.legal-item dd p:last-child {
+  margin-bottom: 0;
+}
+
+/* リスト共通 */
+.legal-item ul,
+.legal-item ol {
+  margin: 12px 0 20px;
+  padding-left: 1.5em;
+  line-height: 1.9;
+}
+
+.legal-item ul {
+  list-style: disc;
+}
+
+.legal-item ol {
+  list-style: decimal;
+}
+
+.legal-item li {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  padding-left: 4px;
+}
+
+.legal-item li:last-child {
+  margin-bottom: 0;
+}
+
+/* キャンセル料などのリスト */
+.legal-item .legal-list {
+  margin: 12px 0 20px;
+  padding-left: 1.5em;
+  border: none;
+  list-style: disc;
+}
+
+.legal-item .legal-list li {
+  margin-bottom: 4px;
+  margin-top: 4px;
+}
+
+/* リスト内の強調文字 */
+.legal-item li strong {
+  font-weight: 600;
+}
+
+/* リンク */
+.legal-link {
+  color: var(--color-primary, #159DA8);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.legal-link:hover {
+  opacity: 0.75;
+}
+
+/* 注記 */
+.legal-note {
+  margin-top: 12px;
+  color: #687982;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.legal-bottom-note {
+  margin-top: 32px;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+
+  .legal-page {
+    padding-top: 32px;
+    padding-bottom: 56px;
+  }
+
+  .legal-hero {
+    margin-bottom: 28px;
+  }
+
+  .legal-hero .section-title {
+    font-size: 24px;
+    line-height: 1.5;
+  }
+
+  .legal-intro {
+    font-size: 14px;
+  }
+
+  .legal-item {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 20px 4px;
+  }
+
+  .legal-item dt {
+    font-size: 14px;
+  }
+
+  .legal-item dd {
+    font-size: 13px;
+  }
+
+  .legal-item ul,
+  .legal-item ol {
+    padding-left: 1.3em;
+    margin: 10px 0 16px;
+  }
+
+  .legal-item li {
+    margin-top: 3px;
+    margin-bottom: 6px;
+    padding-left: 2px;
+  }
+
+  
+
+}

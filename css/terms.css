@@ -1,0 +1,157 @@
+
+/* ========================================
+   Terms - ご依頼規約
+======================================== */
+
+.terms-page {
+  padding-top: 40px;
+  padding-bottom: var(--space-section, 80px);
+}
+
+/* ページ見出し */
+.terms-hero {
+  margin-bottom: 40px;
+}
+
+.terms-hero .section-title {
+  margin-bottom: 16px;
+}
+
+/* 導入文 */
+.terms-intro {
+  color: var(--color-text, #253B4D);
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+/* 規約本文 */
+.terms-content {
+  margin: 0 auto;
+  color: var(--color-text, #253B4D);
+  font-size: 15px;
+  line-height: 1.9;
+  overflow-wrap: anywhere;
+}
+
+/* 各項目 */
+.terms-section {
+  margin-top: 36px;
+}
+
+.terms-section:first-child {
+  margin-top: 0;
+}
+
+/* 項目見出し */
+.terms-section h2 {
+  margin: 0 0 16px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--color-primary, #42C1C3);
+  color: var(--color-text, #253B4D);
+  font-size: 1.15rem;
+  line-height: 1.6;
+}
+
+/* 本文 */
+.terms-section p {
+  margin: 0 0 1em;
+}
+
+.terms-section p:last-child {
+  margin-bottom: 0;
+}
+
+/* 箇条書き */
+.terms-section ul,
+.terms-section ol {
+  margin: 0 0 1em;
+  padding-left: 1.5em;
+}
+
+.terms-section ul {
+  list-style: disc;
+}
+
+.terms-section ol {
+  list-style: decimal;
+}
+
+.terms-section li {
+  margin-bottom: 6px;
+  padding-left: 4px;
+}
+
+.terms-section li:last-child {
+  margin-bottom: 0;
+}
+
+/* 強調 */
+.terms-section strong {
+  font-weight: 600;
+}
+
+/* リンク */
+.terms-content a {
+  color: var(--color-accent, #159DA8);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 0.2s ease;
+}
+
+.terms-content a:hover {
+  opacity: 0.7;
+}
+
+/* 注釈 */
+.terms-note {
+  margin-top: 32px;
+  color: #71818A;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* 最終更新日 */
+.terms-date {
+  margin-top: 48px;
+  color: var(--color-text, #253B4D);
+  font-size: 0.9rem;
+  text-align: right;
+}
+
+
+
+/* ========================================
+   Mobile
+======================================== */
+
+@media (max-width: 767px) {
+
+  .terms-page {
+    padding-top: 32px;
+  }
+
+  .terms-hero {
+    margin-bottom: 28px;
+  }
+
+  .terms-content {
+    font-size: 14px;
+  }
+
+  .terms-section {
+    margin-top: 28px;
+  }
+
+  .terms-section h2 {
+    font-size: 1.05rem;
+  }
+
+  .terms-section ul,
+  .terms-section ol {
+    padding-left: 1.3em;
+  }
+
+  .terms-note {
+    margin-top: 24px;
+  }
+}
