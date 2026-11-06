@@ -128,12 +128,15 @@ function createWorkCardHTML(item) {
   const thumbnail = item.thumbnail || item.image;
 
   const imgContent = thumbnail
-    ? `<img src="${thumbnail}" alt="${item.title}" style="width:100%; height:100%; object-fit:cover;">`
+    ? `<div class="work-card-media">
+        <img class="work-card-backdrop" src="${thumbnail}" alt="" aria-hidden="true">
+        <img class="work-card-image" src="${thumbnail}" alt="${item.title}" onload="setWorkCardImageOrientation(this)">
+      </div>`
     : `<div class="work-thumb">Image (3:2)</div>`;
 
   return `
     <div class="work-card" onclick="openModal(${item.id})">
-      <div style="aspect-ratio: 3/2; overflow: hidden; background-color: var(--color-border);">
+      <div class="work-card-preview">
         ${imgContent}
       </div>
       <div class="work-info">
@@ -141,6 +144,13 @@ function createWorkCardHTML(item) {
       </div>
     </div>
   `;
+}
+
+function setWorkCardImageOrientation(image) {
+  const preview = image.closest('.work-card-preview');
+  if (preview) {
+    preview.classList.toggle('is-portrait', image.naturalHeight > image.naturalWidth);
+  }
 }
 
 
@@ -205,7 +215,6 @@ function openModal(id) {
           controls
           playsinline
           preload="metadata"
-          style="max-width:100%; max-height:100%; width:100%; height:100%; object-fit:contain;"
         >
           <source src="${item.image}" type="video/mp4">
           お使いのブラウザでは動画を再生できません。
@@ -216,7 +225,6 @@ function openModal(id) {
         <img
           src="${item.image}"
           alt="${item.title}"
-          style="max-width:100%; max-height:100%; object-fit:contain;"
         >
       `;
     } else {

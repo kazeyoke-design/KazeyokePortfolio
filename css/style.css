@@ -311,13 +311,13 @@ img {
 .hero-copy h1 {
   font-size: 32px;
   letter-spacing: 0.05em;
-  color: var(--color-text);
+  color: #ffffff;
   margin-bottom: 8px;
 }
 
 .hero-copy p {
   font-size: 15px;
-  color: #61788a;
+  color: #f3f7fa;
 }
 
 
@@ -422,6 +422,48 @@ img {
   align-items: center;
   justify-content: center;
   color: #8da4b0;
+}
+
+.work-card-preview {
+  position: relative;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  background-color: var(--color-border);
+}
+
+.work-card-media {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.work-card-backdrop,
+.work-card-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.work-card-backdrop {
+  display: none;
+  object-fit: cover;
+  filter: blur(14px);
+  transform: scale(1.08);
+}
+
+.work-card-image {
+  z-index: 1;
+  object-fit: cover;
+}
+
+.work-card-preview.is-portrait .work-card-backdrop {
+  display: block;
+}
+
+.work-card-preview.is-portrait .work-card-image {
+  object-fit: contain;
 }
 
 .work-info {
@@ -668,27 +710,31 @@ img {
   align-items: center;
   justify-content: center;
   padding: 20px;
+  overflow-y: auto;
 }
 
 .modal-overlay.active {
   display: flex;
+  align-items: flex-start;
 }
 
 .modal-content {
   background-color: var(--color-surface);
   border-radius: var(--radius-card);
   max-width: 1000px;
+  max-height: calc(100dvh - 40px);
   width: 100%;
   padding: 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0 auto;
+  overflow-y: auto;
 }
 
 .modal-image {
   width: 100%;
-  aspect-ratio: 3 / 2;
-  background-color: var(--color-border);
+  flex-shrink: 0;
   border-radius: 8px;
   margin-bottom: 16px;
   display: flex;
@@ -697,12 +743,22 @@ img {
   color: #8da4b0;
 }
 
+.modal-image img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 65dvh;
+  object-fit: contain;
+}
+
 /* モーダル内の動画 */
 .modal-image video {
   display: block;
-  width: 100%;
+  width: auto;
   height: auto;
-  max-height: 65vh;
+  max-width: 100%;
+  max-height: 65dvh;
   object-fit: contain;
   background-color: #000;
   border-radius: 8px;
@@ -765,14 +821,14 @@ img {
 @media (max-width: 768px) {
   .modal-overlay {
     padding: 10px;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
   }
 
   .modal-content {
     width: 100%;
     max-width: none;
-    max-height: 94dvh;
+    max-height: calc(100dvh - 20px);
     padding: 16px 12px;
     border-radius: 12px;
     overflow-y: auto;
@@ -781,22 +837,15 @@ img {
   /* 作品画像 */
   .modal-image {
     width: 100%;
-    min-height: 120px;
-    max-height: 70dvh;
-    aspect-ratio: auto;
     margin-bottom: 14px;
   }
 
   .modal-image img {
-    display: block;
-    width: 100%;
-    height: auto;
-    max-height: 70dvh;
-    object-fit: contain;
+    max-height: 60dvh;
   }
 
   .modal-image video {
-  max-height: 60vh;
+    max-height: 60dvh;
   }
 
   /* タイトル */
@@ -838,15 +887,12 @@ img {
 
   .modal-content {
     padding: 12px 10px;
-    max-height: 96dvh;
+    max-height: calc(100dvh - 12px);
   }
 
-  .modal-image {
-    max-height: 72dvh;
-  }
-
-  .modal-image img {
-    max-height: 72dvh;
+  .modal-image img,
+  .modal-image video {
+    max-height: 55dvh;
   }
 
   .modal-title {
@@ -1420,6 +1466,3 @@ img {
 .opening-played .opening {
   display: none;
 }
-
-
-

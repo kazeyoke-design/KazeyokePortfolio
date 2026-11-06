@@ -29,6 +29,18 @@
 
 
 const worksData = [
+
+  {
+    id: 13,
+    title: "illustration｜キャラクターイラスト",
+    category: "illustration",
+    desc: "サイトトップのイラスト。",
+    image: "images/works/01_work_09.png",
+    createdAt: "2026-11"
+  },
+
+
+
   {
     id: 7,
     title: "Commission｜キャラクター立ち絵",
