@@ -72,7 +72,7 @@ const worksData = [
     id: 10,
     title: "Adopt｜キャラクター販売立ち絵3",
     category: "illustration",
-    desc: "うちよそグッズ制作用SDイラスト。（女の子キャラクターはフォロワーのOCです）",
+    desc: "既存キャラ販売用に制作したオリジナルキャラクターの全身立ち絵。",
     image: "images/works/01_work_06.png",
     createdAt: "2026-"
   },
